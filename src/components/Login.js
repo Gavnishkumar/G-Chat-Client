@@ -47,8 +47,8 @@ const Login = () => {
         })
         setLoading(false);
         localStorage.setItem('userInfo',JSON.stringify(data));
-        navigate('/chats');
-        navigate('/');
+        window.location.reload();
+        
         
       } catch(error){
         toast({
