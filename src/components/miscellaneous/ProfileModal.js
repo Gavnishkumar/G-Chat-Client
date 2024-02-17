@@ -10,10 +10,11 @@ import {
     ModalCloseButton,
   } from '@chakra-ui/react'
   
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const ProfileModal = ({user,children}) => {
     const navigate=useNavigate();
+    
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -21,6 +22,8 @@ const ProfileModal = ({user,children}) => {
         <IconButton d={{base: "flex"}}
         icon={<ViewIcon/>} onClick={onOpen}/>
       )}
+
+
 <Modal isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent d="flex" alignItems="center" padding="20px">
@@ -40,6 +43,7 @@ const ProfileModal = ({user,children}) => {
       }}>Log out</Button>
     </ModalFooter>
   </ModalContent>
+
 </Modal>
     </>
   )

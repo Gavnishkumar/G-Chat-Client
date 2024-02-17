@@ -46,10 +46,9 @@ const Login = () => {
           isClosable: true,
         })
         setLoading(false);
-    
         localStorage.setItem('userInfo',JSON.stringify(data));
-
-        navigate('/chats')
+        navigate("/chats");
+        navigate('/login');
       } catch(error){
         toast({
           title: 'Failed',
