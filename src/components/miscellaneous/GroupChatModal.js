@@ -68,7 +68,7 @@ useEffect(()=>{
                 },
             }
             try {
-                const data = await axios.get(`/api/user?search=${search}`, config);
+                const data = await axios.get(`https://g-chat-backend.onrender.com/api/user?search=${search}`, config);
 
                 setSearchResult(data.data);
             } catch (error) {
@@ -106,7 +106,7 @@ useEffect(()=>{
                         Authorization: `Bearer ${user.data.token}`,
                     },
                 }
-                const {data}=await axios.post('/api/chats/group',{"name": groupName,"users": JSON.stringify(selectedUsers)},config);
+                const {data}=await axios.post('https://g-chat-backend.onrender.com/api/chats/group',{"name": groupName,"users": JSON.stringify(selectedUsers)},config);
                 setChats([data,...chats]);
                 onClose();
                 toast({

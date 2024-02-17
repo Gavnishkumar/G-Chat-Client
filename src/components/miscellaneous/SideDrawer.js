@@ -43,7 +43,7 @@ const SideDrawer = () => {
     }
   
     try {
-      const data= await axios.get(`/api/user?search=${search}`,config);
+      const data= await axios.get(`https://g-chat-backend.onrender.com/api/user?search=${search}`,config);
       
         setSearchResult(data.data);
     } catch (error) {
@@ -65,7 +65,7 @@ const SideDrawer = () => {
   
       }
       const userIdobj={"userId": userId};
-      const {data} = await axios.post('/api/chats/', userIdobj ,config);
+      const {data} = await axios.post('https://g-chat-backend.onrender.com/api/chats/', userIdobj ,config);
       console.log(data);
       if(chats && chats.find((c)=> c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);

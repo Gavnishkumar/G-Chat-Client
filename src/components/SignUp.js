@@ -131,7 +131,7 @@ const SignUp = () => {
                         'content-type': 'application/json',
                     },
                 }
-                const data=await axios.post('/api/user',{name:Name,email:Email,password:Password,pic:pic},config);
+                const data=await axios.post('https://g-chat-backend.onrender.com/api/user',{name:Name,email:Email,password:Password,pic:pic},config);
                         toast({
                                title: 'Registered successfully',
                                status: "success",

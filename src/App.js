@@ -10,7 +10,7 @@ import Developer from './components/Developer';
 
 const urlEndpoint = 'https://ik.imagekit.io/gavnish';
 const publicKey = 'public_Zvr1dcEpVsbSPVIOGr7YfZwFdHM='; 
-const authenticationEndpoint = 'http://localhost:5000/imageauth';
+const authenticationEndpoint = 'https://g-chat-backend.onrender.com/imageauth';
 function App() {
   return (
     <div className='App'>

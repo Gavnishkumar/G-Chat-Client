@@ -36,7 +36,7 @@ const Login = () => {
               'content-type': 'application/json',
           },
         }
-        const data=await axios.post('/api/user/login',{email: Email,password:Password},config);
+        const data=await axios.post('https://g-chat-backend.onrender.com/api/user/login',{email: Email,password:Password},config);
         toast({
           title: 'logged in successfully',
           status: "success",

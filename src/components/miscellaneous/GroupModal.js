@@ -49,7 +49,7 @@ const GroupModal = ({Group,children}) => {
             Authorization: `Bearer ${user.data.token}`
           }
         }
-        const {data}= await axios.put('/api/chats/rename',{"chatId": selectedChat._id, "chatName": renameValue},config)
+        const {data}= await axios.put('https://g-chat-backend.onrender.com/api/chats/rename',{"chatId": selectedChat._id, "chatName": renameValue},config)
         
         setRename(false)
         toast({
@@ -83,7 +83,7 @@ const GroupModal = ({Group,children}) => {
             },
         }
         try {
-            const data = await axios.get(`/api/user?search=${search}`, config);
+            const data = await axios.get(`https://g-chat-backend.onrender.com/api/user?search=${search}`, config);
 
             setSearchResult(data.data);
         } catch (error) {
@@ -111,7 +111,7 @@ try {
         Authorization: `Bearer ${user.data.token}`,
     },
 }
-  const {data}=await axios.put('/api/chats/groupadd',{"chatId" : selectedChat._id,"userId": e._id},config)
+  const {data}=await axios.put('https://g-chat-backend.onrender.com/api/chats/groupadd',{"chatId" : selectedChat._id,"userId": e._id},config)
     setSelectedChat(data)
     toast({
       title: 'Updated',
