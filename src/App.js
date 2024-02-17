@@ -7,10 +7,12 @@ import { IKContext, IKImage } from 'imagekitio-react';
 import Home from './components/Home';
 import Chat from './components/Chat';
 import Developer from './components/Developer';
+import RedirectToHome from './components/redirect/RedirectToHome';
 
 const urlEndpoint = 'https://ik.imagekit.io/gavnish';
 const publicKey = 'public_Zvr1dcEpVsbSPVIOGr7YfZwFdHM='; 
 const authenticationEndpoint = 'https://g-chat-backend.onrender.com/imageauth';
+
 function App() {
   return (
     <div className='App'>
@@ -21,8 +23,9 @@ function App() {
       >
        
       <Routes>
+        
         <Route exact path='/' element={<Home/>}></Route>
-        <Route exact path='/chats' element={<Chat/>}></Route>
+        <Route exact path='/chats' element={<RedirectToHome/>}></Route>
         <Route exact path='/developer-page' element={<Developer/>}></Route>
       </Routes>
       </IKContext>
