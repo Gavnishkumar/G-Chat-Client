@@ -140,6 +140,7 @@ const SignUp = () => {
                                duration: 5000,
                                isClosable: true,
                              })
+                navigate('/login');
                 navigate('/chats');
                 setIsLoading(false);          
                 localStorage.setItem('userInfo',JSON.stringify(data));

@@ -14,7 +14,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const ProfileModal = ({user,children}) => {
     const navigate=useNavigate();
-    
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
