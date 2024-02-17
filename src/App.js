@@ -7,7 +7,8 @@ import { IKContext, IKImage } from 'imagekitio-react';
 import Home from './components/Home';
 import Chat from './components/Chat';
 import Developer from './components/Developer';
-import RedirectToHome from './components/redirect/RedirectToHome';
+import RedirectToHome from './components/RedirectToHome';
+
 
 
 const urlEndpoint = 'https://ik.imagekit.io/gavnish';
