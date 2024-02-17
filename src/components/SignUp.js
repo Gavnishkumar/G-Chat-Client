@@ -141,8 +141,7 @@ const SignUp = () => {
                                isClosable: true,
                              })
                 localStorage.setItem('userInfo',JSON.stringify(data));
-                navigate('/login');
-                navigate('/chats');
+                window.location.reload();
                 setIsLoading(false);          
             } catch (error) {
                 console.log(error.response.data.msg);
