@@ -29,7 +29,7 @@ const SignUp = () => {
     const toast=useToast();
     const postDetail=async(pics)=>{
         setIsLoading(true);
-        console.log(pics)
+        // console.log(pics)
         // if(pics===undefined){
         //     toast({
         //         title: 'Please select an image.',
@@ -85,7 +85,7 @@ const SignUp = () => {
       const onSuccess = res => {
         
         setPic(res.thumbnailUrl);
-        console.log(res.thumbnailUrl)
+        // console.log(res.thumbnailUrl)
         setIsLoading(false);
 
       };

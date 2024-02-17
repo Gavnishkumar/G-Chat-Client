@@ -1,7 +1,7 @@
 export const getSender=( loggedUser,users)=>{
   if(!users || loggedUser.length===0) return;
-  console.log(users)
-  console.log(loggedUser)
+  // console.log(users)
+  // console.log(loggedUser)
     return users[0]._id===loggedUser.data._id ? users[1].name: users[0].name;
 };
 export const getSenderPic=(loggedUser,users)=>{

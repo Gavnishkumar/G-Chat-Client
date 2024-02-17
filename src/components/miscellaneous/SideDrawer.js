@@ -67,7 +67,7 @@ const SideDrawer = () => {
       }
       const userIdobj={"userId": userId};
       const {data} = await axios.post(`${baseURL}api/chats/`, userIdobj ,config);
-      console.log(data);
+      // console.log(data);
       if(chats && chats.find((c)=> c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
       setLoading(false);
@@ -84,9 +84,9 @@ const SideDrawer = () => {
     }
     setLoadingChat(false);
 }
-useEffect(()=>{
-  console.log(selectedChat)
-},[selectedChat])
+// useEffect(()=>{
+//   console.log(selectedChat)
+// },[selectedChat])
   return (
     <div>
       <Box display="flex" justifyContent="center" alignItems='center'backgroundColor="#333333" >
