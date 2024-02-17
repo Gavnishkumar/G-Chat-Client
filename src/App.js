@@ -22,7 +22,7 @@ function App() {
        
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
-        <Route exact path='/Chats' element={<Chat/>}></Route>
+        <Route exact path='/chats' element={<Chat/>}></Route>
         <Route exact path='/developer-page' element={<Developer/>}></Route>
       </Routes>
       </IKContext>
