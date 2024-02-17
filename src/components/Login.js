@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  const baseURL="https://g-chat-backend.onrender.com/";
   const navigate=useNavigate();
   const toast=useToast();
     const [Email, setEmail] = useState();
@@ -36,7 +37,7 @@ const Login = () => {
               'content-type': 'application/json',
           },
         }
-        const data=await axios.post('https://g-chat-backend.onrender.com/api/user/login',{email: Email,password:Password},config);
+        const data=await axios.post(`${baseURL}api/user/login`,{email: Email,password:Password},config);
         toast({
           title: 'logged in successfully',
           status: "success",

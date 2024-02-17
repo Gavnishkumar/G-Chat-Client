@@ -11,7 +11,8 @@ import { Badge } from '@chakra-ui/react'
 import { Link, useNavigate } from 'react-router-dom';
 
 const SideDrawer = () => {
-  const navigate= useNavigate()
+  const navigate= useNavigate();
+  const baseURL="https://g-chat-backend.onrender.com/";
   const {user,selectedChat,setSelectedChat,chats,setChats,notification,setNotification}=ChatState();
   const { isOpen, onOpen, onClose } = useDisclosure()
  
@@ -43,7 +44,7 @@ const SideDrawer = () => {
     }
   
     try {
-      const data= await axios.get(`https://g-chat-backend.onrender.com/api/user?search=${search}`,config);
+      const data= await axios.get(`${baseURL}api/user?search=${search}`,config);
       
         setSearchResult(data.data);
     } catch (error) {
@@ -65,7 +66,7 @@ const SideDrawer = () => {
   
       }
       const userIdobj={"userId": userId};
-      const {data} = await axios.post('https://g-chat-backend.onrender.com/api/chats/', userIdobj ,config);
+      const {data} = await axios.post(`${baseURL}api/chats/`, userIdobj ,config);
       console.log(data);
       if(chats && chats.find((c)=> c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);

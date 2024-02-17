@@ -9,6 +9,7 @@ import '../App.css';
 import GroupChatModal from './miscellaneous/GroupChatModal';
 
 const MyChats = ({fetchAgain}) => {
+  const baseURL="https://g-chat-backend.onrender.com/";
   const {user,selectedChat,setSelectedChat,chats,setChats}=ChatState();
 
   const [loggedUser,setLoggedUser]=useState([]);
@@ -20,7 +21,7 @@ const MyChats = ({fetchAgain}) => {
           Authorization: `Bearer ${user.data.token}`
         }
       }
-      const {data} = await axios.get('https://g-chat-backend.onrender.com/api/chats/',config);
+      const {data} = await axios.get(`${baseURL}api/chats/`,config);
       setChats(data);
     } catch (error) {
       toast({

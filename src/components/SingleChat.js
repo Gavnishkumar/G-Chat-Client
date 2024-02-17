@@ -14,7 +14,7 @@ import NotificationSound from '../notification/sneej.mp3';
 import '../App.css'
 import useSound from 'use-sound';
 
-const ENDPOINT= "https://g-chat-backend.onrender.com/";
+const baseURL= "https://g-chat-backend.onrender.com/";
 
 var socket,selectedChatCompare;
 
@@ -28,7 +28,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
   const [play] = useSound(NotificationSound);
     const {user,selectedChat,setSelectedChat,notification,setNotification}= ChatState();
     useEffect(()=>{
-      socket=io(ENDPOINT);
+      socket=io(baseURL);
       socket.emit('setup',user)
       // eslint-disable-next-line
       socket.on("connected",()=>{
@@ -47,7 +47,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
               Authorization: `Bearer ${user.data.token}`
             }
           }
-          const {data}= await axios.get(`https://g-chat-backend.onrender.com/api/message/${selectedChat._id}`,config);
+          const {data}= await axios.get(`${baseURL}api/message/${selectedChat._id}`,config);
           
           setMessages(data)
           socket.emit("join chat",selectedChat._id)
@@ -88,7 +88,7 @@ useEffect(()=>{
             }
           }
           setNewMessage("");
-          const {data}= await axios.post('https://g-chat-backend.onrender.com/api/message',{"content": newMessage,"chatId": selectedChat._id},config);
+          const {data}= await axios.post(`${baseURL}api/message`,{"content": newMessage,"chatId": selectedChat._id},config);
          socket.emit('new message',data)
          setMessages([...messages,data])
         } catch (error) {

@@ -6,6 +6,7 @@ import axios from 'axios'
 const GroupMemberList = ({member}) => {
   const {user,selectedChat}=ChatState();
   const toast= useToast();
+  const baseURL="https://g-chat-backend.onrender.com/";
   const handleLeave=async()=>{
     try {
       const config={
@@ -13,7 +14,7 @@ const GroupMemberList = ({member}) => {
           Authorization: `Bearer ${user.data.token}`
         }
       }
-      await axios.put('https://g-chat-backend.onrender.com/api/chats/groupremove',{"chatId":selectedChat._id,"userId": member._id},config);
+      await axios.put(`${baseURL}api/chats/groupremove`,{"chatId":selectedChat._id,"userId": member._id},config);
       toast({
         title: 'Successfull',
         status: "success",

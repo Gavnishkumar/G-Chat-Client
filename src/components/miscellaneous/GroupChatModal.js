@@ -21,6 +21,7 @@ import { ChatState } from '../../context/createContext';
 import UserBadgeItem from '../Avatar/UserBadgeItem';
 
 const GroupChatModal = ({ children }) => {
+    const baseURL="https://g-chat-backend.onrender.com/";
     const toast = useToast();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { user, chats, setChats} = ChatState();
@@ -68,7 +69,7 @@ useEffect(()=>{
                 },
             }
             try {
-                const data = await axios.get(`https://g-chat-backend.onrender.com/api/user?search=${search}`, config);
+                const data = await axios.get(`${bseURL}api/user?search=${search}`, config);
 
                 setSearchResult(data.data);
             } catch (error) {
@@ -106,7 +107,7 @@ useEffect(()=>{
                         Authorization: `Bearer ${user.data.token}`,
                     },
                 }
-                const {data}=await axios.post('https://g-chat-backend.onrender.com/api/chats/group',{"name": groupName,"users": JSON.stringify(selectedUsers)},config);
+                const {data}=await axios.post(`${baseURL}api/chats/group`,{"name": groupName,"users": JSON.stringify(selectedUsers)},config);
                 setChats([data,...chats]);
                 onClose();
                 toast({
