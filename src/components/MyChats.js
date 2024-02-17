@@ -61,7 +61,7 @@ useEffect(()=>{
            > 
                 MY chats
                 <GroupChatModal>
-                <Button d="flex" fontSize={{base: "17px",md:"10px",lg: "17px"}}
+                <Button d="flex" style={{margin:"11%"}} fontSize={{base: "17px",md:"10px",lg: "17px"}}
                 rightIcon={<AddIcon/>}>
                   Create Group
                 </Button>
